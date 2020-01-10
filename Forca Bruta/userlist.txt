@@ -1,0 +1,6 @@
+user
+adm
+admin
+Administrator
+Admin
+root

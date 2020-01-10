@@ -1,0 +1,1134 @@
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+.horus-button {
+	border-radius: 4px;
+    background-color: #23569c;
+    height: auto;
+    display: inline-block;
+    border: 0px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #1b4277;
+    padding: 10px 14px 6px 14px;
+    margin: 0px 10px;
+	text-decoration: none;
+}
+
+.capture_hover {
+    cursor: pointer;
+    background: rgba(255, 170, 170, 0.34) !important;
+    -webkit-box-shadow: 0px 0px 2px #f33 !important;
+            box-shadow: 0px 0px 2px #f33 !important;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/************************** MODAL BOX **********************/
+
+/* The Modal (background) */
+#horus-modal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+#horus-modal .horus-modalContent {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#horus-modal .horus-modalClose {
+    color: #f33;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#horus-modal .horus-modalClose:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/********************* INTERACTION CONTAINER *******************/
+
+@-webkit-keyframes hideInteraction {
+    to {bottom: -285px;}
+}
+
+@keyframes hideInteraction {
+    to {bottom: -285px;}
+}
+
+@-webkit-keyframes showInteraction {
+    to {bottom: 10px;}
+}
+
+@keyframes showInteraction {
+    to {bottom: 10px;}
+}
+
+
+
+/* toast/banner/video */
+
+.horus-interactionContainer {
+    position: fixed;
+    width: 430px;
+    bottom: -285px;
+    right: 10px;
+    z-index: 1;
+    -webkit-animation: showInteraction 0.5s linear 0.5s forwards;
+            animation: showInteraction 0.5s linear 0.5s forwards;
+}
+
+.horus-interactionContainer.hide {
+    bottom: 0;
+    -webkit-animation: hideInteraction 0.5s linear 0.1s forwards;
+            animation: hideInteraction 0.5s linear 0.1s forwards;
+}
+
+.horus-interactionContainer > .wrap_elements .content {
+    position: relative;
+    background-image: url(../images/logo_BB_fundo.png);
+    background-position: 286px -10px;
+    background-repeat: no-repeat;
+}
+
+.horus-interactionContainer > .wrap_elements .content p {
+    margin: 10px 0px !important;
+}
+
+.horus-interactionContainer > .wrap_elements {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #F6F6F6;
+    -webkit-box-shadow: -2px 4px 12px rgba(138, 141, 144, 0.4);
+            box-shadow: -2px 4px 12px rgba(138, 141, 144, 0.4);
+    border: 2px solid #23569c;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.horus-interactionContainer > .wrap_elements .hcr-logo_fundo {
+    position: absolute;
+    width: 225px;
+    height: 180px;
+    top: 36px;
+    right: -86px;
+}
+
+
+/* header chat (logo, mensagem e botão de fechar */
+.horus-interactionContainer > .wrap_elements h2.header,
+#horus-chatRequested h2, 
+#horus-askChat .hac-box h2 {
+    all: initial;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: #f7d118;
+    color: #23569c;
+    font-size: 16px;
+    padding: 8px 0px;
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.horus-interactionContainer > .wrap_elements h2 > img, 
+#horus-chatRequested h2 > img, 
+#horus-askChat .hac-box h2 > img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 15px;
+    height: 35px;
+}
+
+.horus-interactionContainer > .wrap_elements h2 > .btn_refused,
+#horus-chatRequested h2 > .btn_refused  {
+    background: none;
+    color: #cc4646;
+    border: 2px solid #cc4646;
+    font-weight: bold;
+    font-size: 15px;
+    width: 23px;
+    height: 23px;
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.horus-interactionContainer > .wrap_elements h2.header svg,
+#horus-chatRequested h2.header svg {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 9px;
+}
+
+.horus-interactionContainer > .wrap_elements .actions {
+    width: 100%;
+    position: absolute;
+    text-align: right;
+    border-bottom-left-radius: 3px;
+    background: #23569c;
+    bottom: 0;
+    right: 0;
+}
+
+.horus-interactionContainer > .wrap_elements .actions {
+    position: relative !important;
+}
+
+.horus-interactionContainer .interaction-button-a, 
+.horus-interactionContainer .interaction-button-b {
+    border: none;
+    color: #fff !important;
+    background: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 4px 10px 4px 0;
+    display: inline-block;
+}
+
+
+.horus-interactionContainer .interaction-button-a:hover, 
+.horus-interactionContainer .interaction-button-b:hover {
+    color: #1d58a0 !important;
+    background: #c7d9ed;
+}
+
+
+
+/* Chat */
+
+#horus-chatRequested {
+    background: white;
+    position: fixed;
+    width: 430px;
+    bottom: -285px;
+    right: 10px;
+    z-index: 1;
+    /* min-height: 300px; */
+    -webkit-animation: showInteraction 0.5s linear 0.5s forwards;
+            animation: showInteraction 0.5s linear 0.5s forwards;
+}
+
+#horus-chatRequested.hide {
+    bottom: 0;
+    -webkit-animation: hideInteraction 0.5s linear 0.1s forwards;
+            animation: hideInteraction 0.5s linear 0.1s forwards;
+}
+
+#horus-chatRequested .chat_request {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #c6d7eb;
+    -webkit-box-shadow: -2px 4px 12px #8a8d90;
+            box-shadow: -2px 4px 12px #8a8d90;
+    border: 3px solid #23569c;
+    border-radius: 6px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+#horus-chatRequested .chat_request .hcr-logo_fundo {
+    position: absolute;
+    width: 225px;
+    height: 180px;
+    top: 36px;
+    right: -86px;
+}
+
+#horus-chatRequested h2, 
+#horus-askChat .hac-box h2 {
+    text-transform: uppercase;
+    border-top-left-radius: 6px;
+    -webkit-box-shadow: 0px 2px 1px #b19815;
+            box-shadow: 0px 2px 1px #b19815;
+    background: #f7d118;
+    color: #23569c;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+#horus-chatRequested .info, 
+#horus-askChat .hac-box .info {
+    width: 275px;
+    float: right;
+    margin: 20px 11px 0px 15px;
+    color: #3c658c;
+    letter-spacing: 0.3px;
+    font-size: 16px !important;
+}
+
+#horus-chatRequested .info p, 
+#horus-askChat .hac-box .info p {
+    padding: 10px;
+    margin: 0px;
+}
+
+#horus-chatRequested .info ul, 
+#horus-askChat .hac-box .info ul {
+    margin: 0px;
+    padding: 0px 0px 0px 15px;
+}
+
+#horus-chatRequested .info ul li {
+    list-style: disc !important;
+    font-size: 16px !important;
+}
+
+#horus-chatRequested .actions, 
+#horus-askChat .hac-box .actions {
+    width: 100%;
+    position: absolute;
+    padding: 12px 0px;
+    text-align: right;
+    border-bottom-left-radius: 3px;
+    background: #23569c;
+    bottom: 0;
+    right: 0;
+}
+
+#horus-chatRequested .hcr-btn_waiting, 
+#horus-chatRequested .hcr-btn_accept, 
+#horus-askChat .hac-box .hcr-btn_accept {
+    border: none;
+    color: #fff !important;
+    background: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 24px;
+}
+
+#horus-chatRequested .hcr-btn_waiting {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+ 
+#horus-chatRequested .hcr-btn_waiting:hover, 
+#horus-chatRequested .hcr-btn_accept:hover {
+    color: #1d58a0 !important;
+    background: #c7d9ed;
+}
+
+#horus-chatRequested .hcr-img_user, 
+#horus-askChat .hac-box .hcr-img_user {
+    position: absolute;
+    height: 190px;
+    bottom: 0px;
+    margin-left: 10px;
+    z-index: 1;
+}
+
+/************************** ASK CHAT **********************/
+
+#horus-askChat .hac-ask {
+    position: fixed;
+    background: #23569c;
+    color: #f8d117;
+    padding: 0px 10px;
+    cursor: pointer;
+    right: 0px;
+    top: 315px;
+    width: 25px!important;
+    opacity: 0;
+    -webkit-animation: askHide2 1s linear 0.5s forwards;
+            animation: askHide2 1s linear 0.5s forwards;
+}
+
+@-webkit-keyframes askHide2 {
+    to {opacity: 1;}
+}
+
+@keyframes askHide2 {
+    to {opacity: 1;}
+}
+
+#horus-askChat:hover .hac-ask {
+    opacity: 0;
+}
+
+#horus-askChat .hac-ask p {
+    width:1px;
+    word-wrap: break-word;
+    font-family: monospace; /* this is just for good looks */
+    white-space: pre-wrap;/* this is for displaying whitespaces including Firefox */
+    padding: 5px 0px;
+    line-height: 1.2!important;
+    font-size: 13px !important;
+}
+
+#horus-askChat .hac-box {
+    position: fixed;
+    right: -370px;
+    top: 300px;
+    width: 355px;
+    height: 260px;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-box-shadow: -3px 3px 2px #afc8e2;
+            box-shadow: -3px 3px 2px #afc8e2;
+    border: 2px solid #23569c;
+    border-radius: 6px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #c6d7eb;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    -webkit-animation-name: askShowHide;
+            animation-name: askShowHide;
+    -webkit-animation-duration: 6s;
+            animation-duration: 6s;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+}
+
+@-webkit-keyframes askShowHide {
+    0%  { right: -370px; }
+    10% { right: 0px; }
+    50% { right: 0px; }
+    90% { right: 0px; }
+    100% { right: -370px; }
+}
+
+@keyframes askShowHide {
+    0%  { right: -370px; }
+    10% { right: 0px; }
+    50% { right: 0px; }
+    90% { right: 0px; }
+    100% { right: -370px; }
+}
+
+#horus-askChat .hac-box:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+}
+
+#horus-askChat .hac-box-show {
+    right: 0px;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+#horus-askChat .hac-box-hide {
+    -webkit-transition: 1s;
+    transition: 1s;
+    right: -370px;
+}
+
+#horus-askChat .hac-box .hcr-logo_fundo {
+    position: absolute;
+    width: 200px;
+    height: 145px;
+    top: 54px;
+    right: -75px;
+}
+
+#horus-askChat .hac-box .info {
+    margin-top: 15px;
+    width: 235px;
+    font-size: 14px !important;
+}
+
+#horus-askChat .hac-box .info ul li {
+    list-style: disc !important;
+    font-size: 14px !important;
+}
+
+#horus-askChat .hac-box .actions {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#horus-askChat .hac-box .hcr-btn_accept {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+#horus-askChat .hac-box .hcr-btn_accept span {
+    font-size: 13px !important;
+    letter-spacing: 0.3px;
+    color:#fff !important;
+}
+
+#horus-askChat .hac-box .hcr-btn_accept span.cancel {
+    font-size: 13px !important;
+    color: #c6bea0 !important;
+    letter-spacing: 0.5px;
+}
+
+#horus-askChat .hac-box .hca-waiting {
+	 height: 25px;
+     float: left;
+     padding-left: 20px;
+}
+
+#horus-askChat .hac-box .hcr-img_user {
+    height: 180px;
+}
+
+/************************** CHAT BOX **********************/
+
+#horus-chatBox {
+    width: 370px;
+    height: 600px;
+    background: #F7F7F7;
+    position: fixed;
+    right: 14px;
+    bottom: 10px;
+    -webkit-box-shadow: 2px 1px 15px #717171;
+            box-shadow: 2px 1px 15px #717171;
+    border-radius: 14px;
+    opacity: 1 !important;
+}
+
+#horus-chatBox .hcb-header {
+    all: initial;
+    display: block;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 10px;
+    background-color: #f8d117;
+    color: #23569c;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#horus-chatBox .hcb-header > img {
+    vertical-align: middle;
+    width: 36px;
+    margin-right: 10px;
+}
+
+#horus-chatBox .hcb-sub_header {
+	background: #2360ba;
+    padding: 8px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+#horus-chatBox .hcb-sub_header .hcb-protocol {
+	font-size: 12px !important;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#horus-chatBox .hcb-sub_header .hcb-protocol > b {
+    font-size: 10px;
+}
+
+#horus-chatBox .hcb-sub_header .hcb-timmer {
+	font-size: 10px !important;
+    margin-top: 2px;
+    color: #bccee8 !important;
+}
+
+#horus-chatBox .hcb-sub_header .hcb-timmer span {
+    color: #bccee8 !important;
+    font-size: 10px !important;
+}
+
+#horus-chatBox .hcb-sub_header .hcb-close {
+	float: right;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 4px 10px;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    border: 0px;
+    color: #2360ba;
+}
+
+#horus-chatBox .hcb-footer {
+    width: 100%;
+}
+
+#horus-chatBox .chat_closed {
+	text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin: 270px 0px;
+}
+
+#horus-chatBox .text_area_msgs {
+	max-height: 393px;
+    height: 100%;
+    padding: 8px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    overflow: auto;
+}
+
+
+
+/*
+ * FOOTER CHATBOX
+*/
+
+.hcb-message-box {
+    position: relative;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 2px 0 0 #e6e6e6;
+            box-shadow: 0 2px 0 0 #e6e6e6;
+}
+
+#horus-chatBox .text_area_send_msg{
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    border: 0;
+    outline: 0;
+    font-size: 14px!important;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 5px;
+    resize: none;
+}
+
+.hcb-footer-actions {
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+.emoji-component {
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.popover__title {
+    position: relative;
+}
+
+.popover__title p {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
+    background: #f9f9f9;
+    padding: 7px 10px;
+}
+
+.popover__title div {
+    position: absolute;
+    opacity: .9;
+    top: 6px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #cc4646;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+}
+
+.popover__title div svg {
+    position: relative;
+    width: 8px;
+    color: #cc4646;
+}
+
+
+.popover-emoji {
+    display: none;
+    position: absolute;
+    bottom: 48px;
+    width: 252px;
+    left: -121px;
+    background: white;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.show-emoji {
+    display: block;
+}
+
+.popover-emoji::after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: -9px;
+    left: 20px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    content: '';
+    z-index: -1;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.emojis-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.popover__content {
+    padding: 10px;
+    position: relative;
+}
+
+.popover__content .info {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.emojis-group .emoji {
+    display: block;
+    padding: 3px;
+    line-height: 28px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.btn-action {
+    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+    height: auto;
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #23569c;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+    padding: 8px 8px 4px 8px;
+    cursor: pointer;
+    text-decoration: none;
+    background: none;
+}
+
+.btn-action svg {
+    width: 18px;
+}
+
+#horus-chatBox.textAreaExpand .text_area_send_msg {
+    -webkit-transition: .2s ease-in;
+    transition: .2s ease-in;
+}
+
+#horus-chatBox.textAreaExpand .text_area_msgs {
+    -webkit-transition: .2s ease-in;
+    transition: .2s ease-in;
+}
+
+#horus-chatBox .typing {
+    visibility: hidden;
+    position: absolute;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.8px;
+    font-size: 13px;
+    color: #8d96a5;
+    margin: -32px 0 0 10px;
+    left: 0;
+    padding: 5px 8px;
+    background: #fff;
+    width: 235px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+#horus-chatBox .hcb-countChars {
+    position: absolute;
+    width: 80%;
+    margin: 0px 7px;
+    bottom: 20px;
+    left: 3px;
+    font-size: 13px;
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    opacity: .6;
+}
+
+#horus-chatBox .bar_buttons {
+	float: right;
+}
+
+#horus-chatBox .bar_buttons > div {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#horus-chatBox .bar_buttons > div:hover {
+    background: #fff1ae;
+}
+
+#horus-chatBox .bar_buttons .button-move:hover {
+    cursor: move;
+    position: relative;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#horus-chatBox .bar_buttons .button-minimize:hover {
+    cursor: pointer;
+    -webkit-transition: 1s;
+    transition: 1s;
+    padding: 4px 10px 2px 10px;
+}
+
+#horus-chatBox.chatMin {
+    bottom: -545px;
+}
+
+#horus-chatBox .btnSend {
+	position: relative;
+    background-color:#0a67a2;
+    cursor: pointer;
+}
+
+#horus-chatBox .messageDiv {
+	height: auto;
+	width: 100%;
+	position: relative;
+    color: #222;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+#horus-chatBox .message {
+	max-width: 80%;
+    min-width: 255px;
+	padding: 8px;
+	margin-bottom: 8px;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 15px !important;
+	font-family: Helvetica, Arial, sans-serif;
+	word-wrap: break-word;
+}
+
+#horus-chatBox .message img {
+    max-width: 100%;
+    max-height: 350px;
+}
+
+#horus-chatBox .clientMessage {
+    position: relative;
+	/* background-color : rgb(247, 234, 176); */
+    background-color : #fff;
+    -webkit-box-shadow: 0 2px 0 0 #e6e6e6;
+            box-shadow: 0 2px 0 0 #e6e6e6;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+#horus-chatBox .clientMessage .span-horario {
+    left: 0;
+    bottom: -18px;
+}
+
+
+#horus-chatBox .clientMessage::before {
+    position: absolute;
+    top: 12px;
+    right: -5px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color : #fff;
+    z-index: -1;
+}
+
+#horus-chatBox .operator-span {
+    position: relative;
+    background: rgb(211, 229, 255);
+    margin-left: 10px;
+    z-index: 0;
+    margin-bottom: 25px;
+}
+
+#horus-chatBox .operator-span .file, #horus-chatBox .clientMessage .file {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0px 5px 0px 0px;
+    margin-bottom: 4px;
+}
+
+#horus-chatBox .operator-span .file {
+    background: #acc8f3;
+}
+
+#horus-chatBox .clientMessage .file {
+   background: #e8e6dd; 
+}
+
+#horus-chatBox .operator-span .file .icon-file, #horus-chatBox .clientMessage .file .icon-file {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    flex-basis: 35px;
+    margin-right: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#horus-chatBox .operator-span .file .icon-file {
+    background: #87a8da;
+}
+
+#horus-chatBox .clientMessage .file .icon-file {
+    background: #bfbfb0;
+}
+
+#horus-chatBox .operator-span .file .icon-file > svg,  #horus-chatBox .clientMessage .file .icon-file > svg {
+    color:#fff;
+}
+
+#horus-chatBox .operator-span .file-name, #horus-chatBox .clientMessage .file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+#horus-chatBox .operator-span .file-action, #horus-chatBox .clientMessage .file-action {
+    display: flex;
+    align-items: center;
+}
+
+#horus-chatBox .operator-span .file-action .progress, #horus-chatBox .clientMessage .file-action .progress {
+    width: 100%;
+    height: 10px;
+    margin-left: 12px;
+    visibility: hidden;
+    background: #fff;
+}
+
+#horus-chatBox .clientMessage .file-action .progress {
+    background: #8a8367;
+}
+
+#horus-chatBox .operator-span .file-action .progress .downloaded, #horus-chatBox .clientMessage .file-action .progress .downloaded {
+    width: 1%;
+    height: 100%;
+    background: #92ca8b;
+}
+
+#horus-chatBox .operator-span .file-action .icon-action,  #horus-chatBox .clientMessage .file-action .icon-action {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+#horus-chatBox .operator-span .file-action .icon-action > svg {
+    color: #608aca;
+}
+
+#horus-chatBox .clientMessage .file-action .icon-action > svg {
+    color: #ff8282;
+}
+
+#horus-chatBox .operator-span .span-horario, #horus-chatBox .clientMessage .span-horario {
+    right: 0;
+    bottom: -18px;
+}
+
+#horus-chatBox .operator-span::before {
+    position: absolute;
+    top: 12px;
+    left: -5px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: rgb(211, 229, 255);
+    z-index: -1;
+}
+
+
+#horus-chatBox .operator-div {
+	text-align: left;
+}
+
+#horus-chatBox .transfer-div {
+    text-align: center;
+}
+
+#horus-chatBox .transfer-span {
+    color: #bf5656;
+}
+
+#horus-chatBox .checks {
+	background: url(../images/sprites.png) no-repeat;
+	list-style-type: none;
+	float: left;
+}
+
+#horus-chatBox .Checkmark-Check {
+	background-position: 0 0;
+	width: 20px;
+	height: 20px;
+}
+
+#horus-chatBox .Watch-20 {
+	background-position: -60px 0;
+	width: 20px;
+	height: 20px;
+}
+
+#horus-chatBox .Double-Tick-Black {
+	background-position: -40px 0;
+	width: 20px;
+	height: 20px;
+}
+
+#horus-chatBox .Double-Tick-Green {
+	background-position: -20px 0;
+	width: 20px;
+	height: 20px;
+}
+
+#horus-chatBox .span-horario {
+    position: absolute;
+	font-size: 12px !important;
+    color: #6b6d71 !important;
+    letter-spacing: 0.3px;
+}
+
+#horus-chatBox .hcb-alert {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    width: 240px;
+    padding: 15px 10px;
+    margin: 200px auto 0px auto;
+    margin-left: -132px;
+    text-align: center;
+    border-radius: 8px;
+    border: 4px solid #87a0c5;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 0px 20px 4px #cdd0d4;
+    box-shadow: 0px 0px 20px 4px #cdd0d4;
+}
+
+#horus-chatBox .hcb-alert .hcb-alert-text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: #666;
+    line-height: 20px;
+}
+
+#horus-chatBox .hcb-alert .hcb-alert-buttons {
+    margin-top: 10px;
+}
+
+#horus-chatBox .hcb-alert .hcb-alert-buttons button {
+    margin: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #9ebeea;
+    border-radius: 3px;
+    color: #2360ba;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+}
+
+#horus-chatBox .hcb-alert .hcb-alert-buttons button:hover {
+    cursor: pointer;
+    background: #fff;
+}
+
+#horus-chatBox .msg_container .message strong {
+    font-weight: bold;
+}
+
+#horus-chatBox .message * {
+    font-size: 15px;
+}

@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<style>
+			.carregando-login{width: 296px;font-family: "Heuvetica Neue", "Helvetica", sans-serif;font-size: 15px;
+			background-image: url(/aapf/imagens/icones/carregandoLogin.gif);background-size: 30px 30px;
+			background-repeat: no-repeat no-repeat;margin: auto auto;height: 60px;padding-top: 5px;padding-left: 36px;}		
+			#deployJavaPlugin{width: 0px;height: 0px;}
+			.principal-overlay{width: 100%;height: 100%;left: 0px;top: 0px;background-color: #fafafa;opacity: 0.4;position: fixed;display: block;background-image: url('/aapf/imagens/carregando.gif');background-position: center center;z-index: 999;  background-repeat: no-repeat;}			
+		</style>	
+		<script type="text/javascript" src="/aapf/includes/js/jquery-1.9.1.js?v=1.0"></script>
+		<script type="text/javascript">
+			
+			function enviar(dados){
+				var formTemp = $("#hiddenForm");
+				if(dados.dadosPlugin){
+					$.each( dados.dadosPlugin, function( key, value ) {
+						formTemp.append($("<input></input>",{"type":"hidden","id":key,"name":key}).val(value));
+					});
+				}else if(dados.erro){
+					$.each( dados.erro, function( key, value ) {
+						formTemp.append($("<input></input>",{"type":"hidden","id":key,"name":key}).val(value));
+					});
+				}
+			    $("body").append(formTemp);
+			    formTemp.submit();
+			}
+			
+			
+			function enviarGbas(dados){
+				var formTemp = $('<form></form>').attr({id:"formT", name:"formT", action:"https://www2.bancobrasil.com.br/aapf/login.jsp",target:"_self",method:"POST"});
+				if(dados.dadosPlugin){
+					$.each( dados.dadosPlugin, function( key, value ) {
+						formTemp.append($("<input></input>",{"type":"hidden","id":key,"name":key}).val(value));
+					});
+				}else if(dados.erro){
+					$.each( dados.erro, function( key, value ) {
+						formTemp.append($("<input></input>",{"type":"hidden","id":key,"name":key}).val(value));
+					});
+				}
+			    $("body").append(formTemp);
+			    formTemp.submit();
+			}			
+		</script>		
+		<title>Autoatendimento Pessoa Física - Banco do Brasil</title>
+		<meta name="description" content="Realize muitas transações com facilidade, comodidade e segurança. Acesse já o Autoatendimento pessoa física do Banco do Brasil.">
+		<meta name="keywords" content="autoatendimento, autoatendimento bb, autoatendimento banco do brasil ">
+	</head>
+	<body>
+		
+		
+		
+			<div class="carregando-login">	<font face="Trebuchet MS, Default Sans Serif, Arial, Verdana, Helvetica, sans-serif" size="2">Aguarde, iniciando o acesso...</font>
+</div>		
+		
+		
+				<script type="text/javascript" src="/aapf/includes/js/warsaw-agent.js"></script>
+				<script type="text/javascript" src="/aapf/includes/js/warsaw-wrapper.js"></script>
+			   	<script>
+		    		var wsWrapper;
+					var dadosWS = {};	
+			    	function getInfoCmd() {
+			    		return JSON.stringify({"d":"{\"n\":\"Info\",\"rs\":1,\"s\":\"6870a2e61661c6f5\"}","ds":1,"s":"CY2j/CLcAE/ZT4Y6hUiN457hjUNQQochNubSUBSwmCUBkrvmCdznu2Qv82qcMYehvceOY9InHeEkrfAoDxukrzNtb9xOppfWeGr5W+fgLK2uL0unO0rBVwdkDhnIMrtOoCk9HrY7xPcrRA8NrccO7LxwsesCMs93SvX5XGRqmeF4Ensl6NXWxD46qt/za5WhIlNx7BtscMAtn0rIionKieDFh0efCKhQtty0y5Vq/EDvtVh9DuIRJF/pS45Z5aIk3O92bLLzX9+J2lxITEFvt1Y5ZtVj5dXdK801OonldpUeU4EnVgF7KGB0RwncwujTT0386+kOkX1HAOo4cMkRPEH7m5iuAQK5UHYTX/EBQLD8xxBdzCTQ8CH3g4+CyFZgR+ivUeGKQ6jaX4kh48V0I7PZBWETUueBnlxMUVHAtuy6PriVqOaMuO/dq3+ELApRJ8jhoGA6KUZwuuFBxLtx0yVB5hN0aYP/5cDMgA3rU/czEu5CLPlTW0puvj4c3vVCbQipLGPEtVEaQOA1RSNvuCxqcWnrrQ1HYfh50YGzpxLfBhmVHgQWah0I+vuxHuPyBGBBcE62WcnJWf3esPnQloD78TgBK9vL1tFCMsW5FfvM+djwFT1TRYPhFE6vfmpZIJ183oBOx9Jl4aom6QzrMRHESpEaPdQ5mNoX6pIVWo4=","v":1});
+			    	}
+			    	function getDigestCmd() {
+			    		return JSON.stringify({"d":"{\"n\":\"Digest\",\"rs\":1,\"s\":\"6870a2e61661c6f5\"}","ds":1,"s":"iP00SCXcYIyC1CSERFxb7lTGohGTnB31pOduEA6pwOmOBXA8OEZzCyyopFvGEQ9f/mvkEhiPMx2tdgndtzNvwpqc+kvqL6eFMCDm78jjhitutZ8gulQTpVm7yUXWi7auCyg+0q+20MotY2KcFoPZ/6V3dJeEmfedaEQl1xOCA5YUnk3dJCxtxbXO6M9GDpOyv0l8A0pmCifrZhyUIzkEZCzVCogT5/T0seL8nAucfJhyIVyl5PO549H5qUEr/2KMe9ivf/+ZN+81TKPtgUvj4TlB71tbcXHnyOgmEJtcCLUGCM2H7mk5RU2SwEaYVxLo7qAd4k3ANmZkzZ2zwjKMRwtcyoD6i2iaN6JYMPZj9APbQFL0yOWr3Pgxv9Cg03ccIiCT1LqoaGctr974l2cxMoKshdsX4B1PAN3jeskXe+2S1ZYA25ytv2g5yMtNphPoPDwdDQ1VPl1vrb8epq/DmA3+rGF9ZKoG87RnI5BUBFYKiAUlVmzbcA0vG+TyTx2En6RFWRHutf1+A7Ny3UpV4LUa4fv5gplYgdu3S21n6Q26OegZz0Bpbt55grqlmDymbVwBRYTSE2jpu8zo5UzPXYD9trVFXdn1gz5Y+p5drAhuMNWs4/aA5OlKnGzEdMVtz3RGSdcVMx6VCMkBpZApcKqUna2jbXQSWV7KoMHyWyY=","v":1});
+			    	}    	
+			    	function autenticar() {
+			    		wsWrapper.Update(function() {
+			    			console.log("Erro no update.");
+			    		});
+			    		wsWrapper.Info(getInfoCmd(), 
+			    		function(dados) {
+			    			dadosWS["info"] = dados;
+			    			wsWrapper.Info(getDigestCmd(), 
+			    				function(dados) {
+			    					dadosWS["digest"] = dados;
+			    					enviar({"dadosPlugin":dadosWS});
+			    				}, function(msg) { 
+			    					enviar({"erro":{"codigoErro":"WS00005","descricaoErro":msg,"localizacao":"49"}});
+			    				});
+			    		}, function(msg) {
+			    			enviar({"erro":{"codigoErro":"WS00004","descricaoErro":msg,"localizacao":"48"}});
+			    		});
+			    	}
+			    	
+			    	function instalarWarsaw() { 
+			    		wsWrapper.Install(autenticar, function() { 
+			    			enviar({"erro":{"codigoErro":"WS00003","descricaoErro":"Erro ao tentar instalar","localizacao":"47"}});
+			    		}, 60);
+			    	}
+			    	$(document).ready(function(){
+				    	wsWrapper = new WarsawWrapper("bb", "efvfxVQ6EvLYz2C4sIJaS2BHgzkiDTYpddBUfiK2+URM4RZYLNt9wLF9QrvQLhCbU51KGDlH15yIXSGq1zpTyjEfwXfPkU9iotTJkcRutRYbxlIUPgGrsSSyUHgscNCF1e97DTuZEXMliU0lfIHsDhxYSggoN69VFQK9W0JTvXu9aMCkl2Z2","6870a2e61661c6f5");
+				    	setTimeout(function(){
+					    	wsWrapper.IsInstalled(autenticar, instalarWarsaw, function(msg) { 
+					    		if (msg == "Close") {  
+					    			enviar({"erro":{"codigoErro":"WS00001","descricaoErro":msg,"localizacao":"45"}});
+					            } else { 
+					            	enviar({"erro":{"codigoErro":"WS00002","descricaoErro":msg,"localizacao":"46"}});
+					            }
+					    	});
+				    	},1000);
+			    	});
+			   	</script>
+			
+			<form id="hiddenForm" name="hiddenForm" action="/aapf/login.jsp" target="_self" method="POST">	
+		<input type="hidden" name="aapf.IDH" value="sim"><input type="hidden" name="perfil" value="6">		
+		</form>
+	</body>
+	
+</html>

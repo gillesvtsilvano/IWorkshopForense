@@ -1,0 +1,92 @@
+@media print {
+	BODY, TD {color: #000000;}
+	.iTrs {color: #000000;}
+	.pTrs {color: #000000;}
+	.tdHeadTrans{color: #000000;}
+	.textoComprov  {font-size :  11pt ; color: #000000;}
+	.textoComprovBold {font-size :  12pt ;color: #000000;}
+	.textoComprovFormatado {font-size : 12pt ; color: #000000;}
+	
+	.cabComprovante, .corpoComprovante{ width:340px; border:none; padding:0; margin:0; }
+	.cabComprovante tr td, .corpoComprovante tr td{ font:12pt "Courier New",Courier; text-transform:uppercase; }
+	.corpoComprovante{ margin:0 0 40px; }
+	.corpoComprovante tr td{ text-transform:none !important; line-height:14px; }	
+	
+	.textoComprovBoldFormatado {color: #000000;}
+	.textoComprovIRPF {font-family : "Courier New", Courier, monospace; font-size : 14px; color: #000000;}
+	.textoComprovIRPF12 {font-family : Arial, Helvetica, sans-serif; font-weight: normal; font-size : 14px; color: #000000;}
+	.textoComprovIRPF8 {font-family : Arial, Helvetica, sans-serif; font-weight: normal; font-size : 14px; color: #000000;}
+	.textoComprovIRPF11 {font-family : Arial, Helvetica, sans-serif; font-weight: normal; font-size : 14px; color: #000000;}
+	.textoComprovIRPF10 {font-family : Arial, Helvetica, sans-serif; font-weight: normal; font-size : 14px; color: #000000;}
+	
+	.cabComprovante, .corpoComprovante{ width:340px; border:none; padding:0; margin:0; color:#000; }
+	.cabComprovante tr td, #corpoComprovante tr td{ font:11pt "Courier New",Courier; text-transform:uppercase; }
+	.corpoComprovante{ margin:0 0 50px; }
+	.cabComprovante, .corpoComprovante tr td{ text-transform:none !important; line-height:8pt; }
+	
+	.textoComprovTituloIRPF {font-size: 10px; color: #000000; font-weight: bold;}
+	.txtMenuMid {color: #000000;}
+	
+	.layout {display: none;}
+	.barraLightGeral, .barraLightUniversitario, .barraLightEstilo, .barraLightPrivate {display: none;}
+	#barraSuperior {display:none;}
+	.paginaPersonalizada {display:none;}  
+	.corpo {left: 0px; padding-left: 0px;}
+	.fechado {display: none;}
+	.cabecalhoComprovIRPF{width: 575px; color: #000000;}
+	.divExtrato{text-align: left;}
+	.imgBotao, .botaoTrs, .botao {display: none;}
+ 
+	.noPrint {display: none;}
+	.graficoGERN {width: 450px; height: 300px;}
+	.graficoGERZ1 {width: 525px; height: 300px;}
+	.graficoGERZ2 {width: 525px; height: 310px;}
+	.tabelaGELB {width: 615px;}
+	p.quebra { page-break-after:always; page-break-inside: avoid;}
+	.logoBB{width:213px; height:36px;  background-image:url("../../imagens/DemonstrativoPrestacao/marcaBB2006.gif"); background-repeat:no-repeat; }
+	.imagemTopo{display:none;}
+	.imagemTopoEsconde{display:inline;};    
+	
+	.ulExtrato li table.tabelaExtrato tr td.botaoAcaoExtrato{width : 0%;}
+	.ulExtrato li table.tabelaExtrato tr th.botaoAcaoExtrato{width : 0%;}
+	.ulExtrato li.tituloExtrato{text-align: center;}
+	.telaExtrato li.liLinhaTempo{display: none;}
+	.telaExtrato li.liTabs ul.tabs{display: none;}
+	.telaExtrato li.liTabs div.divResultadoExtrato{border-color: transparent;}
+	
+	
+	.transacao .transacao-corpo .ulComprovanteTextoFormatado {float: none;}
+	.transacao .transacao-corpo .ulComprovanteTextoFormatado .textoComprovFormatado{font-size : 12pt !important; color: #000000 !important;font-family : "Courier New", Courier, monospace;float: none;}  
+	.transacao .transacao-corpo .ulComprovanteTextoFormatado {text-align: none;}
+	.transacao .rodapeTransacaoSucesso{display: none;}
+
+	
+    .transacao .tituloTransacao{display : none;}
+    .transacao .tituloTransacao div.txtMenuMid{display : none;}
+    .transacao .transacao-mensagem-verde{display : none;}
+	.transacao .transacao-corpo div.comprovante {height: auto;overflow-y:hidden;border-style:none;}
+	.corpoModal .transacao .transacao-botoes{display : none;}	
+
+	#dadosFiltro8CM{display:none}
+	#liLinkPacote{display:none}		
+	#dadosClienteImpressao{display:block;}
+	
+	div.telaComprovante{border: none !important;}
+	ul.ul8BL li.comprovante{border: none !important;}
+	.transacao li.liCorpoTransacao ul.ulComprovanteTextoFormatado{width: 100%;}
+	div.dadosComprovante{height: auto;overflow-y: hidden;}
+
+	.conformidadePacotes{width:auto;height:auto;float:left; left: 0px;overflow-y: hidden;}	
+	
+	.principal-overlay,.principal .cabecalho,.principal .menu-lateral, .corpo .transacao .transacao-barra-titulo {display: none;}
+	.caixa-dialogo{display: none;} 
+	.informe_INSS{min-height: 1270px !important;float: left !important;margin-bottom: 20px !important;padding-top: 30px !important;margin-top:50px !important;}
+	
+	/*impressão simulação 8BL*/
+	ul.ul8BL li.parametrosSimulacao{display: none;}
+	#dadosSimulacao {overflow-y: hidden ;overflow-x:hidden;}
+	.listaSimulacaoImpressao{display: block;border: 0px solid #ddd; position: absolute; left: 0; top: 0;}
+	ul.ul8BL li.simulacao {border: 0px solid #ddd; width: 800px;}
+	ul.ul8BL li.simulacao ul li.titulo{display: none;}
+	ul.ul8BL li.simulacao ul li.conteudo div#dadosSimulacao ul.listaSimulacao li.linha{display: none;}
+}
